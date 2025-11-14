@@ -1,0 +1,1 @@
+var modelInfo = {model:"LabB_CheckCommunications"};var modelHierarchy=[{model:"LabB_CheckCommunications",relativePath:"_internal.html",parent:"null"},];var AddCode = true;var ProtectedModel = false;

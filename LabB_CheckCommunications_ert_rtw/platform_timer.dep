@@ -1,0 +1,95 @@
+platform_timer.o: \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/platform_timer.cpp \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WCharacter.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WString.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/HardwareSerial.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Stream.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Print.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Printable.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/USBAPI.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
+ /Applications/MATLAB_R2025b.app/simulink/include/rtw_extmode.h \
+ /Applications/MATLAB_R2025b.app/simulink/include/sysran_types.h \
+ /Applications/MATLAB_R2025b.app/simulink/include/rtw_continuous.h \
+ /Applications/MATLAB_R2025b.app/simulink/include/rtw_solver.h \
+ /Applications/MATLAB_R2025b.app/simulink/include/rtw_continuous.h \
+ /Users/emil/Documents/MATLAB/RASPlib/include/MPU6050wrapper.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_arduino_digitalio.h \
+ /Users/emil/Documents/MATLAB/RASPlib/include/encoder_arduino.h \
+ /Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_PWM.h \
+ /Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_SVD.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_types.h \
+ /Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_SVD.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtGetNaN.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/MW_target_hardware_resources.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WCharacter.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WString.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/HardwareSerial.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Stream.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Print.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Printable.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/USBAPI.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
+
+/Applications/MATLAB_R2025b.app/simulink/include/rtw_extmode.h:
+
+/Applications/MATLAB_R2025b.app/simulink/include/sysran_types.h:
+
+/Applications/MATLAB_R2025b.app/simulink/include/rtw_continuous.h:
+
+/Applications/MATLAB_R2025b.app/simulink/include/rtw_solver.h:
+
+/Applications/MATLAB_R2025b.app/simulink/include/rtw_continuous.h:
+
+/Users/emil/Documents/MATLAB/RASPlib/include/MPU6050wrapper.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_arduino_digitalio.h:
+
+/Users/emil/Documents/MATLAB/RASPlib/include/encoder_arduino.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_PWM.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_SVD.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_types.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_SVD.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtGetNaN.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/MW_target_hardware_resources.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h:

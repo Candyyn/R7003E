@@ -11,7 +11,7 @@ set_param('LabB_TuneTheGyro', 'SimulationCommand', 'start');
 fprintf('Started the simulation!\n');
 
 % wait for some seconds
-iTimeToWait = 7; % in seconds
+iTimeToWait = 20; % in seconds
 for iTime = 1:iTimeToWait;
 	fprintf( '%.2f percent done\n', iTime/(iTimeToWait/100) );
 	pause(1);

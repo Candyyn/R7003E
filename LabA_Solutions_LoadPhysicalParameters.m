@@ -119,6 +119,10 @@ kI = (-15390 - p3*p2*p1 ) / 90.03;
 kP = (-62.08 - (p3*p2 + p3*p1 + p2*p1) ) / 90.03;
 kD = ( 475 - (p3 + p2 + p1) ) / 90.03;
 
+disp(["kI", kI])
+disp(["kP", kP])
+disp(["kD", kD])
+
 controller = pid(kP, kI, kD);
 system = feedback(G, controller); % Gives us the closed loop system
 
@@ -126,7 +130,8 @@ system = feedback(G, controller); % Gives us the closed loop system
 [num, den] = tfdata(system);
 
 % Function differ prob due to new matlab version
-%[zc, pc, kc] = zpkdata(system, 'v');  % Is not being used 
+[zc, pc, kc] = zpkdata(system, 'v');  % Is not being used 
+%disp(pc)
 %impulse(feedback(system, controller));
 %feedback(system, controller);
 
@@ -155,6 +160,7 @@ disp("--- 3.8 Convert the controller to the discrete domain")
 %gh = G * controller;  % Should be here?
 %bandwidth(gh) + bandwidth(1 + gh);
 
+
 sys_bw = bandwidth(controller*G) + bandwidth(1 + controller * G);
 sampling_freq = sys_bw * 25; % From ch 3.8.6
 sampling_freq = sampling_freq / (2 * pi);
@@ -166,25 +172,25 @@ fSamplingPeriod = 1 / sampling_freq;
 
 % IF THIS SECTION CAUSES ERROR, RUN THE SIMULATION FOR LAB A
 
-set(0,'DefaultFigureVisible','on');   % in case it was turned off earlier
-figure('Visible','on');               % open a fresh window
-t = tiledlayout(2,2);
-ax1 = nexttile;
-plot(ax1, theta_b.time, theta_b.signals.values);
-title(ax1,'\theta_b(t)')
-ax2 = nexttile;
-plot(ax2, x_w.time, x_w.signals.values);
-title(ax2,'v_m(t)');
-ax3 = nexttile;
-plot(ax3, v_m.time, v_m.signals.values);
-title(ax3, '\theta_b^{lin}(t)');
-ax4 = nexttile;
-plot(ax4, d.time, d.signals.values);
-title(ax4, 'v_m^{lin}(t)');
-
-
-grid on; drawnow; 
-
+% set(0,'DefaultFigureVisible','on');   % in case it was turned off earlier
+% figure('Visible','on');               % open a fresh window
+% t = tiledlayout(2,2);
+% ax1 = nexttile;
+% plot(ax1, theta_b.time, theta_b.signals.values);
+% title(ax1,'\theta_b(t)')
+% ax2 = nexttile;
+% plot(ax2, x_w.time, x_w.signals.values);
+% title(ax2,'v_m(t)');
+% ax3 = nexttile;
+% plot(ax3, v_m.time, v_m.signals.values);
+% title(ax3, '\theta_b^{lin}(t)');
+% ax4 = nexttile;
+% plot(ax4, d.time, d.signals.values);
+% title(ax4, 'v_m^{lin}(t)');
+% 
+% 
+% grid on; drawnow; 
+% 
 
 
 %Here was some plots
@@ -203,3 +209,33 @@ grid on; drawnow;
 %ax4 = nexttile;
 %plot(ax4, ScopeData10.time,ScopeData10.signals.values);
 %title(ax4, 'v_m^{lin}(t)');
+
+
+
+%% 4.5 -- Check the controllability and observability properties of the linearized system
+disp("Check the controllability and observability properties of the linearized system")
+
+O = obsv(A, C) % At this state, our obserablivity is not full, due to rankO = 3 where n = 4
+rankO = rank(O)
+
+% This will make it so there is a state/mode in the system that cant be
+% seen or detected from the output 
+
+% ctrb - controllability.
+ctr = ctrb(A, B) % Why A and B? prob due to First and Second part of the entire system
+rankC = rank(ctr) % Our RankC and Ctrl n is equal. Which makes our system "controllable?"
+
+%% 4.6.1
+oldPC = pc
+
+Tr = 0.5; %We want a fast rise time <= 0.5
+Mp = 0; % Overshoot -> etha = 1
+etha = 0.7;
+ess = 0.01; % Error (want it less than 1%)
+%Ts  <2s Settlingstime
+
+risetime = 1.8 % 1.8 % book  3.4.1 Rise Time
+w_n = risetime / Tr;
+
+%Ts = (-(ess)) / (etha * w_n) 
+

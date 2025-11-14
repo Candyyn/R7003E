@@ -1,0 +1,50 @@
+xcp_frame_serial.o: \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/transport/src/xcp_frame_serial.c \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/common/xcp_common.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_TuneTheGyro_ert_rtw/rtwtypes.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/include/xcp_platform.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/xcp_platform_custom.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
+ /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/include/xcp.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/transport/src/xcp_frame.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/default/xcp_mem.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/protocol/include/xcp_internal.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/transport/src/xcp_frame_serial.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/protocol/src/xcp_cfg.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/protocol/src/xcp_types.h \
+ /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/protocol/src/xcp_cfg.h
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/common/xcp_common.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_TuneTheGyro_ert_rtw/rtwtypes.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/include/xcp_platform.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/xcp_platform_custom.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
+
+/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/include/xcp.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/transport/src/xcp_frame.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/default/xcp_mem.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/protocol/include/xcp_internal.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/transport/src/xcp_frame_serial.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/protocol/src/xcp_cfg.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/protocol/src/xcp_types.h:
+
+/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/protocol/src/xcp_cfg.h:

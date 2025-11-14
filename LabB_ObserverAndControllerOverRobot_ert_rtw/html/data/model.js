@@ -1,0 +1,1 @@
+var modelInfo = {model:"LabB_ObserverAndControllerOverRobot"};var modelHierarchy=[{model:"LabB_ObserverAndControllerOverRobot",relativePath:"_internal.html",parent:"null"},];var AddCode = true;var ProtectedModel = false;

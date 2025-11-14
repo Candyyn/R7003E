@@ -1,0 +1,14 @@
+rt_nonfinite.o: \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rt_nonfinite.c \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rtGetNaN.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rt_nonfinite.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rtwtypes.h \
+ /Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rtGetInf.h
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rtGetNaN.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rt_nonfinite.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rtwtypes.h:
+
+/Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rtGetInf.h:
