@@ -119,6 +119,7 @@ kI = (-15390 - p3*p2*p1 ) / 90.03;
 kP = (-62.08 - (p3*p2 + p3*p1 + p2*p1) ) / 90.03;
 kD = ( 475 - (p3 + p2 + p1) ) / 90.03;
 
+
 disp(["kI", kI])
 disp(["kP", kP])
 disp(["kD", kD])
@@ -130,7 +131,7 @@ system = feedback(G, controller); % Gives us the closed loop system
 [num, den] = tfdata(system);
 
 % Function differ prob due to new matlab version
-[zc, pc, kc] = zpkdata(system, 'v');  % Is not being used 
+[zc, pc, kc] = zpkdata(system, 'v');  
 %disp(pc)
 %impulse(feedback(system, controller));
 %feedback(system, controller);
@@ -228,14 +229,192 @@ rankC = rank(ctr) % Our RankC and Ctrl n is equal. Which makes our system "contr
 %% 4.6.1
 oldPC = pc
 
-Tr = 0.5; %We want a fast rise time <= 0.5
-Mp = 0; % Overshoot -> etha = 1
-etha = 0.7;
-ess = 0.01; % Error (want it less than 1%)
+etha = 0.7
+p_slow = pc(4,1)
+
+w_n = (abs(p_slow) / etha) % Our Real del
+
+w_d = w_n * sqrt(1 - etha^2) % Imaginar
+p_dom1 = -etha * w_n + 1j * w_d;
+p_dom2 = -etha * w_n - 1j * w_d;
+
+p_fast = [pc(2,1); pc(3,1)]
+
+p_cl = [p_fast; p_dom1; p_dom2]
+%p_cl = [pc(2,1); p_dom1; p_dom2; pc(3,1)]
+
+%Ts = 4 / (etha * w_n) % Settlings time (2% criteria) 
+
+% Choose our -5.6576 from oldPC  
+
+% outcommended old code thats not relevant
+%Tr = 0.5; %We want a fast rise time <= 0.5
+%Mp = 0; % Overshoot -> etha = 1
+
+%ess = 0.01; % Error (want it less than 1%)
 %Ts  <2s Settlingstime
 
-risetime = 1.8 % 1.8 % book  3.4.1 Rise Time
-w_n = risetime / Tr;
+%risetime = 1.8 % 1.8 % book  3.4.1 Rise Time
+%w_n = risetime / Tr;
 
 %Ts = (-(ess)) / (etha * w_n) 
 
+%pc_des = [s + (w_d*i); s - (w_d*i); -50; -100]
+%pc_des
+
+K = place(A, B, p_cl) % First way
+% -574.8968 -296.9783 -413.5632  -68.4583
+
+%% 4.7.1
+
+% a) Choose C
+
+C_bar = [5 1 10 2]%[5 1 10 2];
+D_bar = 0;
+
+
+% b) Show the locus plot
+
+%C_bar = [20,1,25,1];
+
+s = tf('s');
+sys_pos_ss = ss(A, B, C_bar, D_bar);
+G_pos = tf(sys_pos_ss);
+G_pos_min = minreal(G_pos);
+
+[num_pos, den_pos] = tfdata(G_pos_min, 'v');
+
+A_neg      = -A;
+sys_neg_ss = ss(A_neg, B, C_bar, 0);
+G_neg      = tf(sys_neg_ss);
+G_neg_min  = minreal(G_neg);
+
+
+
+%G_pos = (-90.03*s)/((s+475)*(s+5.65)*(s-5.72));
+%G_neg = (-90.03*-s)/((-s+475)*(-s+5.65)*(-s-5.72));
+        
+sysGG = G_neg*G_pos;
+
+rlocus(sysGG);
+
+rho = 1; % 0.1, 1, 10, 100
+   
+all_roots = rlocus(sysGG, rho);
+neg_roots = all_roots(all_roots<=0);
+
+    
+Q = rho*transpose(C_bar)*C_bar;
+     
+K2 = lqr(A,B,Q, 1) % Secound awy to get K value
+%-20.0000  -47.2074  -72.3938  -10.9849
+
+%% 4.8.1
+
+C_luen = [1 0 0 0;
+          0 0 1 0];
+
+A;
+%   1.0e+03 *
+
+%         0    0.0010         0         0
+%         0   -0.4350   -0.0061    0.0091
+%         0         0         0    0.0010
+%         0    1.9034    0.0620   -0.0400
+C_luen';
+pc';  % from 3.5
+
+format bank;
+
+Acl = A - B*K;
+Acl2 = A - B*K2;
+p_cl1 = eig(Acl);
+p_cl2 = eig(Acl2);
+
+p_cl 
+poles_cl = 4 * p_cl;
+
+L= place(A', C_luen', (4*p_cl)').'
+L_K = place(A', C_luen', p_cl1')'
+L_K2 = place(A', C_luen', p_cl2')'
+
+eig(A - L*C_luen)
+rank(obsv(A, C_luen))
+
+% Reducer
+
+% Partition matrices
+Aww = A(1,1);
+Awr = A(1,2:4);
+Arw = A(2:4,1);
+Arr = A(2:4,2:4);
+
+Bw  = B(1,:);
+Br  = B(2:4,:);
+
+C2w = C_luen(2,1);
+C2r = C_luen(2,2:4);
+
+% Pole choice (2–6x faster than -5.66)
+p_slow    = -5.66;
+p_obs_red = [2 4 6] * p_slow;
+Lr        = place(Arr.', C2r.', p_obs_red).';
+
+% Reduced-order observer gains:
+M1 = Arr - Lr*C2r      % 3x3
+M2 = Arw - Lr*C2w      % 3x1
+M3 = Lr                % 3x1
+M4 = Br                % 3xm
+
+M5 = [0 0 0;
+      1 0 0;
+      0 1 0;
+      0 0 1]           % 4x3
+
+M6 = [1; 0; 0; 0]      % 4x1
+M7 = [0; 0; 0; 0]      % 4x1
+M7 = [
+      0     0     0
+      1     0     0
+      0     1     0
+      0     0     1
+ ]
+
+
+C_acc=[1 0 0 0];
+C_nacc=[0 0 1 0];
+T_inv=[C_acc;
+     0 1 0 0;
+     0 0 1 0;
+     0 0 0 1];
+T=inv(T_inv);
+A_tilde=T_inv*A*T
+B_tilde=T_inv*B
+C_acc_tilde = C_acc*T
+C_nacc_tilde = C_nacc * T
+
+A_yy=A_tilde(1,1)
+A_yx=A_tilde(1,2:4)
+A_xy=A_tilde(2:4,1)
+A_xx=A_tilde(2:4,2:4)
+
+
+C_tilde_y = C_nacc_tilde(1,1)
+C_tilde_chi = C_nacc_tilde(1,2:4)
+
+B_tilde_y = B_tilde(1,1);
+B_tilde_chi = B_tilde(2:4,1);
+CC = [A_yx; C_tilde_chi]
+L = (place(A_xx', CC',3*[-5.6, -5.65, -4*5.65]))'
+
+L_acc = L(1:3,1)
+L_nacc= L(1:3,2)
+
+%3x3 - 1x1 * 1x3  - 2x1 * 1x3  
+M1 = A_xx - L_acc*A_yx-L_nacc*C_tilde_chi
+M2 = B_tilde_chi - L_acc *B_tilde_y
+M3 = (A_xy - L_acc*A_yy - L_nacc*C_tilde_y)
+M4 = L_nacc
+M5 = L_acc
+M6 = T(1:4,1)
+M7 = T(1:4,2:4)
