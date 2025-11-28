@@ -96,6 +96,11 @@ G = tf(num, den);
 Zeros = zero(G);
 Poles = pole(G);
 
+SYS = ss(A,B,C,D);
+G = tf(SYS);             % This already gives the minimal TF
+[z, p, k] = zpkdata(G,'v');
+
+
 %pzplot(G) % What is this??
 D_f = zeros(4, 2);
 
@@ -265,6 +270,7 @@ p_cl = [p_fast; p_dom1; p_dom2]
 K = place(A, B, p_cl) % First way
 % -574.8968 -296.9783 -413.5632  -68.4583
 
+
 %% 4.7.1
 
 % a) Choose C
@@ -309,112 +315,135 @@ Q = rho*transpose(C_bar)*C_bar;
 K2 = lqr(A,B,Q, 1) % Secound awy to get K value
 %-20.0000  -47.2074  -72.3938  -10.9849
 
-%% 4.8.1
+%% 4.8.1 Full order 
 
 C_luen = [1 0 0 0;
           0 0 1 0];
 
-A;
-%   1.0e+03 *
+P = [oldPC(1, 1), oldPC(3, 1), oldPC(3, 1), oldPC(3, 1)];
 
-%         0    0.0010         0         0
-%         0   -0.4350   -0.0061    0.0091
-%         0         0         0    0.0010
-%         0    1.9034    0.0620   -0.0400
-C_luen';
-pc';  % from 3.5
+C = [1 0 0 0; 0 0 1 0]
 
-format bank;
+P_o = [P(1) * 4; P(2) * 4 + 0.01; P(3) * 4; P(4) * 4 - 0.01]
 
-Acl = A - B*K;
-Acl2 = A - B*K2;
-p_cl1 = eig(Acl);
-p_cl2 = eig(Acl2);
+L = (place(A', C', P_o))'
 
-p_cl 
-poles_cl = 4 * p_cl;
+%% 4.8.1  redued
 
-L= place(A', C_luen', (4*p_cl)').'
-L_K = place(A', C_luen', p_cl1')'
-L_K2 = place(A', C_luen', p_cl2')'
+V = [C(2,:);0, 1, 0, 0; 0, 0, 0, 1]
+C_notacc = C(2,:);
+C_acc = C(1,:);
+T_inv = [C(1,:) ; V];
+T = inv(T_inv);
 
-eig(A - L*C_luen)
-rank(obsv(A, C_luen))
-
-% Reducer
-
-% Partition matrices
-Aww = A(1,1);
-Awr = A(1,2:4);
-Arw = A(2:4,1);
-Arr = A(2:4,2:4);
-
-Bw  = B(1,:);
-Br  = B(2:4,:);
-
-C2w = C_luen(2,1);
-C2r = C_luen(2,2:4);
-
-% Pole choice (2–6x faster than -5.66)
-p_slow    = -5.66;
-p_obs_red = [2 4 6] * p_slow;
-Lr        = place(Arr.', C2r.', p_obs_red).';
-
-% Reduced-order observer gains:
-M1 = Arr - Lr*C2r      % 3x3
-M2 = Arw - Lr*C2w      % 3x1
-M3 = Lr                % 3x1
-M4 = Br                % 3xm
-
-M5 = [0 0 0;
-      1 0 0;
-      0 1 0;
-      0 0 1]           % 4x3
-
-M6 = [1; 0; 0; 0]      % 4x1
-M7 = [0; 0; 0; 0]      % 4x1
-M7 = [
-      0     0     0
-      1     0     0
-      0     1     0
-      0     0     1
- ]
+A_tilde = T_inv * A * T;
+B_tilde = T_inv * B;
 
 
-C_acc=[1 0 0 0];
-C_nacc=[0 0 1 0];
-T_inv=[C_acc;
-     0 1 0 0;
-     0 0 1 0;
-     0 0 0 1];
-T=inv(T_inv);
-A_tilde=T_inv*A*T
-B_tilde=T_inv*B
-C_acc_tilde = C_acc*T
-C_nacc_tilde = C_nacc * T
+ C_acc_tilde = C_acc * T;
+ C_notacc_tilde = C_notacc * T;
 
-A_yy=A_tilde(1,1)
-A_yx=A_tilde(1,2:4)
-A_xy=A_tilde(2:4,1)
-A_xx=A_tilde(2:4,2:4)
+ n = 4;
+ m = 1;
+ 
+ A_tilde_yy = A_tilde(1:m, 1:m);
+ A_tilde_yx = A_tilde(1:m, 1+m:n);
+ A_tilde_xy = A_tilde(1+m:n, 1:m);
+ A_tilde_xx = A_tilde(1+m:n, 1+m:n);
+ 
+ B_tilde_y = B_tilde(1:m);
+ B_tilde_x = B_tilde(1+m:n);
+ 
+ C_tilde_y = C_notacc_tilde(1:m);
+ C_tilde_x = C_notacc_tilde(1+m:n);
+% y_acc = C(1,;) * x
+% x_hat = T(:,1) * y_acc + T(:,2:)
+
+AA = A_tilde_xx;
+CC = [A_tilde_yx; C_tilde_x];
+
+%L_r = (place(AA', CC', P_o(1+m:n)))';
+L_r = (place(AA', CC', P_o(1:n-1)))';
+L_acc = [L_r(:, 1:m)];
+L_notacc = L_r(:, 1+m:size(L_r, 2));
+
+M1 = A_tilde_xx - L_acc * A_tilde_yx - L_notacc * C_tilde_x;
+M2 = B_tilde_x - L_acc * B_tilde_y;
+M3 = A_tilde_xy - L_acc * A_tilde_yy - L_notacc * C_tilde_y;
+M4 = L_notacc;
+
+M5 = L_acc;
+
+M6 = T(: , 1:m);
+M7 = T(: , 1+m:n);
+
+%% 4.9.1
+
+fSamplingPeriod = 0.001;
+D = 0;
+
+system_d = c2d(ss(A,B,C,D), fSamplingPeriod)
+
+Ad = system_d.A;
+Bd = system_d.B;
+Cd = system_d.C;
+Dd = system_d.D;
 
 
-C_tilde_y = C_nacc_tilde(1,1)
-C_tilde_chi = C_nacc_tilde(1,2:4)
 
-B_tilde_y = B_tilde(1,1);
-B_tilde_chi = B_tilde(2:4,1);
-CC = [A_yx; C_tilde_chi]
-L = (place(A_xx', CC',3*[-5.6, -5.65, -4*5.65]))'
 
-L_acc = L(1:3,1)
-L_nacc= L(1:3,2)
+% compute the gains Kd, Ld, Md1, . . . , Md7 
 
-%3x3 - 1x1 * 1x3  - 2x1 * 1x3  
-M1 = A_xx - L_acc*A_yx-L_nacc*C_tilde_chi
-M2 = B_tilde_chi - L_acc *B_tilde_y
-M3 = (A_xy - L_acc*A_yy - L_nacc*C_tilde_y)
-M4 = L_nacc
-M5 = L_acc
-M6 = T(1:4,1)
-M7 = T(1:4,2:4)
+Kd = lqrd(A,B, Q, rho, fSamplingPeriod);
+
+% L = (place(A', C', P_o))'
+Ld = place(Ad', Cd', exp(P_o * fSamplingPeriod))
+
+V = [Cd(2,:);0, 1, 0, 0; 0, 0, 0, 1]
+C_notacc = Cd(2,:);
+C_acc = Cd(1,:);
+T_inv = [Cd(1,:) ; V];
+T = inv(T_inv);
+
+A_tilde = T_inv * Ad * T;
+B_tilde = T_inv * Bd;
+
+
+ C_acc_tilde = C_acc * T;
+ C_notacc_tilde = C_notacc * T;
+
+ n = 4;
+ m = 1;
+ 
+ A_tilde_yy = A_tilde(1:m, 1:m);
+ A_tilde_yx = A_tilde(1:m, 1+m:n);
+ A_tilde_xy = A_tilde(1+m:n, 1:m);
+ A_tilde_xx = A_tilde(1+m:n, 1+m:n);
+ 
+ B_tilde_y = B_tilde(1:m);
+ B_tilde_x = B_tilde(1+m:n);
+ 
+ C_tilde_y = C_notacc_tilde(1:m);
+ C_tilde_x = C_notacc_tilde(1+m:n);
+% y_acc = C(1,;) * x
+% x_hat = T(:,1) * y_acc + T(:,2:)
+
+AA = A_tilde_xx;
+CC = [A_tilde_yx; C_tilde_x];
+
+P_o %TODO: CHECK IF WE NEED TO REPLACE P_o with diff
+
+%L_r = (place(AA', CC', P_o(1+m:n)))';
+L_r = (place(AA', CC', exp(P_o(1:n-1)*fSamplingPeriod)))';
+L_acc = [L_r(:, 1:m)];
+L_notacc = L_r(:, 1+m:size(L_r, 2));
+
+Md1 = A_tilde_xx - L_acc * A_tilde_yx - L_notacc * C_tilde_x;
+Md2 = B_tilde_x - L_acc * B_tilde_y;
+Md3 = A_tilde_xy - L_acc * A_tilde_yy - L_notacc * C_tilde_y;
+Md4 = L_notacc;
+
+Md5 = L_acc;
+
+Md6 = T(: , 1:m);
+Md7 = T(: , 1+m:n);
