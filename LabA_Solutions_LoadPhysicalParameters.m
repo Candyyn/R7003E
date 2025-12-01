@@ -267,7 +267,7 @@ p_cl = [p_fast; p_dom1; p_dom2]
 %pc_des = [s + (w_d*i); s - (w_d*i); -50; -100]
 %pc_des
 
-K = place(A, B, p_cl) % First way
+K_old = place(A, B, p_cl) % First way
 % -574.8968 -296.9783 -413.5632  -68.4583
 
 
@@ -312,7 +312,7 @@ neg_roots = all_roots(all_roots<=0);
     
 Q = rho*transpose(C_bar)*C_bar;
      
-K2 = lqr(A,B,Q, 1) % Secound awy to get K value
+K = lqr(A,B,Q, 1) % Secound awy to get K value
 %-20.0000  -47.2074  -72.3938  -10.9849
 
 %% 4.8.1 Full order 
@@ -320,11 +320,32 @@ K2 = lqr(A,B,Q, 1) % Secound awy to get K value
 C_luen = [1 0 0 0;
           0 0 1 0];
 
-P = [oldPC(1, 1), oldPC(3, 1), oldPC(3, 1), oldPC(3, 1)];
+p_test = oldPC(oldPC < 0); % only negative real poles
+P_o = 2 * real(p_test)
+P_o = [P_o; P_o(3)]; % add a random extra 
+P_o
+
+
+%Our P_o are WAY TO FAST we need to change that.
+p_neg  = oldPC(oldPC < 0);         % [-475.08; -90.00; -5.66]
+
+% Dominant (slowest) closed-loop pole
+%p_slow = p_neg(end);               % -5.66
+
+% Choose observer poles as 3–6 times faster than p_slow
+%scale = [3; 4; 5; 6];              % multipliers
+
+%P_o = scale * p_slow;
+
+%P = [oldPC(1, 1), oldPC(3, 1), oldPC(3, 1), oldPC(3, 1)];
 
 C = [1 0 0 0; 0 0 1 0]
 
-P_o = [P(1) * 4; P(2) * 4 + 0.01; P(3) * 4; P(4) * 4 - 0.01]
+%P_o = [
+%        P(1) * 4; 
+%        P(2) * 4 + 0.01; 
+%        P(3) * 4; 
+%        P(4) * 4 - 0.01]
 
 L = (place(A', C', P_o))'
 
@@ -379,15 +400,16 @@ M7 = T(: , 1+m:n);
 
 %% 4.9.1
 
-fSamplingPeriod = 0.001;
+fSamplingPeriod = 0.01;
+
 D = 0;
 
 system_d = c2d(ss(A,B,C,D), fSamplingPeriod)
 
-Ad = system_d.A;
-Bd = system_d.B;
-Cd = system_d.C;
-Dd = system_d.D;
+Ad = system_d.A
+Bd = system_d.B
+Cd = system_d.C
+Dd = system_d.D
 
 
 
@@ -395,9 +417,10 @@ Dd = system_d.D;
 % compute the gains Kd, Ld, Md1, . . . , Md7 
 
 Kd = lqrd(A,B, Q, rho, fSamplingPeriod);
+%Kd = 0.75 * Kd
 
 % L = (place(A', C', P_o))'
-Ld = place(Ad', Cd', exp(P_o * fSamplingPeriod))
+Ld = place(Ad', Cd', exp(P_o * fSamplingPeriod)).'
 
 V = [Cd(2,:);0, 1, 0, 0; 0, 0, 0, 1]
 C_notacc = Cd(2,:);
@@ -431,19 +454,19 @@ B_tilde = T_inv * Bd;
 AA = A_tilde_xx;
 CC = [A_tilde_yx; C_tilde_x];
 
-P_o %TODO: CHECK IF WE NEED TO REPLACE P_o with diff
+%P_o; %TODO: CHECK IF WE NEED TO REPLACE P_o with diff
 
 %L_r = (place(AA', CC', P_o(1+m:n)))';
 L_r = (place(AA', CC', exp(P_o(1:n-1)*fSamplingPeriod)))';
 L_acc = [L_r(:, 1:m)];
 L_notacc = L_r(:, 1+m:size(L_r, 2));
 
-Md1 = A_tilde_xx - L_acc * A_tilde_yx - L_notacc * C_tilde_x;
-Md2 = B_tilde_x - L_acc * B_tilde_y;
-Md3 = A_tilde_xy - L_acc * A_tilde_yy - L_notacc * C_tilde_y;
-Md4 = L_notacc;
+Md1 = A_tilde_xx - L_acc * A_tilde_yx - L_notacc * C_tilde_x
+Md2 = B_tilde_x - L_acc * B_tilde_y
+Md3 = A_tilde_xy - L_acc * A_tilde_yy - L_notacc * C_tilde_y
+Md4 = L_notacc
 
-Md5 = L_acc;
+Md5 = L_acc
 
-Md6 = T(: , 1:m);
-Md7 = T(: , 1+m:n);
+Md6 = T(: , 1:m)
+Md7 = T(: , 1+m:n)
