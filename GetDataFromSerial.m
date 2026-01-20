@@ -1,13 +1,14 @@
 % % cleaning
-% clear all;
-% clc;
-% close all;
-
+clear all;
+clc;
+close all;
+fSamplingPeriod = 0.005
 
 % basic parameters
 % fSamplingPeriod	= should be already loaded in the workspace
 iCommunicationTime	= 30;		% [sec]
-iCOMPort			= 'Com3';
+iCOMPort			= '/dev/cu.usbmodem1401';
+%iCOMPort			= '3';
 fPlotsUpdatesPeriod	= 1;		% [sec]
 %
 % advanced parameters
@@ -41,22 +42,37 @@ iNumberOfPacketsToPlotPerTime	= ceil( fPlotsUpdatesPeriod / fSamplingPeriod );
 
 
 % allocate the structure for the serial communication 
-if( ~exist('tSerialCommunication') )
+%if( ~exist('tSerialCommunication') )
 	%
-	fprintf('Opening the serial communications...');
+%	fprintf('Opening the serial communications...');
 	%
-	tSerialCommunication = serial(iCOMPort);
-	set(tSerialCommunication, 'ByteOrder', strByteOrder);
-	set(tSerialCommunication, 'BaudRate', iBaudRate); 
+%	tSerialCommunication = serial(iCOMPort);
+%	set(tSerialCommunication, 'ByteOrder', strByteOrder);
+%	set(tSerialCommunication, 'BaudRate', iBaudRate); 
 % 	tSerialCommunication.ReadAsyncMode = 'continuous';
 % 	fprintf(tSerialCommunication,'*IDN?')
 % 	tSerialCommunication.BytesAvailable
-	fopen(tSerialCommunication);
-	pause(1); % ???
+%	fopen(tSerialCommunication);
+%	pause(1); % ???
 	%
-	fprintf('...done\n');
+%	fprintf('...done\n');
 	%
-end;%
+%end;%
+
+% allocate the structure for the serial communication  fix cause old sstuff
+if ~(exist('tSerialCommunication', 'var') && isvalid(tSerialCommunication))
+    fprintf('Opening the serial communications...\n');
+
+    % Use modern serialport
+    tSerialCommunication = serialport(iCOMPort, iBaudRate, ...
+        "ByteOrder", "big-endian");   % matches strByteOrder
+
+    %configureTerminator(tSerialCommunication, "none");  % binary protocol, no terminator
+    flush(tSerialCommunication);                        % clear any old bytes
+
+    pause(1);  % tiny delay for the connection to settle
+    fprintf('...done\n');
+end
 
 
 % initialize the data plotting

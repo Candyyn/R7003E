@@ -1,4 +1,4 @@
-close all; clear all; clc;
+close all; clear; clc;
 
 % set the clock of the board
 fSamplingPeriod = 0.01;
@@ -25,10 +25,12 @@ fprintf('Simulation stopped: waiting for receiving the data...\n');
 pause(3);
 
 % store the value of the bias in a variable
-fGyroBias = mean(afGyroBias.signals.values);
+%tGyroBias = mean(afGyroBias.signals.values);
+fGyroBias = mean(logsout{1}.Values)
+%tGyroBias = mean(siglog.signals.values);
 
 % save this value in a .mat file
-save('GyroBias.mat', 'fGyroBias');
+%   save('GyroBias.mat', 'fGyroBias');
 fprintf('Done! Data received and saved successfully.\n');
 
 
