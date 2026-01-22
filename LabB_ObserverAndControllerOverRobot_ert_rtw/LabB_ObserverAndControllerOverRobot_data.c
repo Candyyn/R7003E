@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.705
  * Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
- * C/C++ source code generated on : Mon Nov 10 13:18:34 2025
+ * C/C++ source code generated on : Thu Jan 22 10:53:52 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -24,13 +24,14 @@ Parameters_LabB_ObserverAndCont LabB_ObserverAndControllerOve_P = {
   /* Variable: Ad
    * Referenced by: '<S4>/Gain7'
    */
-  { 1.0F, 0.0F, 0.0F, 0.0F, 0.0022F, 0.1691F, 0.0124F, 3.6345F, -0.0F, -0.0096F,
-    1.0006F, 0.2183F, 0.0001F, 0.0173F, 0.0047F, 0.9237F },
+  { 1.0F, 0.0F, 0.0F, 0.0F, 0.00216937577F, 0.169257507F, 0.0123862131F,
+    3.63566065F, -3.56150304E-5F, -0.00954899471F, 1.0005976F, 0.218485147F,
+    5.93717268E-5F, 0.0174099766F, 0.00474093808F, 0.924248695F },
 
   /* Variable: Bd
    * Referenced by: '<S4>/Gain8'
    */
-  { 0.0001F, 0.0394F, -0.0006F, -0.1715F },
+  { 0.00013388088F, 0.0392918736F, -0.000585834379F, -0.171956927F },
 
   /* Variable: Cd
    * Referenced by: '<S4>/Gain10'
@@ -40,53 +41,54 @@ Parameters_LabB_ObserverAndCont LabB_ObserverAndControllerOve_P = {
   /* Variable: Kd
    * Referenced by: '<S1>/controller'
    */
-  { -8.1792F, -49.1223F, -71.4928F, -11.5909F },
+  { -29.4860039F, -48.2958F, -73.5741501F, -11.2352438F },
 
   /* Variable: Ld
    * Referenced by: '<S4>/Gain9'
    */
-  { 0.0723F, 0.0015F, 0.003F, 0.0399F, 0.0028F, 0.0464F, 0.2118F, 2.1508F },
+  { -3.97948837F, 81.5089874F, 0.316176534F, -522.606323F, 0.313993633F,
+    -888.423035F, -8.02942562F, 6025.54736F },
 
   /* Variable: Md1
    * Referenced by: '<S4>/Gain'
    */
-  { 0.1066F, -0.0561F, 0.5176F, -0.0417F, 0.9865F, 0.0215F, 0.0156F, 0.0029F,
-    0.8387F },
+  { 0.831306815F, -0.10258916F, 0.054757826F, -0.101135261F, 0.0196970478F,
+    0.43992272F, 0.00163406925F, 0.0133167896F, 0.836787343F },
 
   /* Variable: Md2
    * Referenced by: '<S4>/Gain1'
    */
-  { 0.0355F, -0.0048F, -0.3641F },
+  { -0.00759169925F, 0.0300618988F, -0.369178712F },
 
   /* Variable: Md3
    * Referenced by: '<S4>/Gain2'
    */
-  { -28.8F, -31.6F, -1437.0F },
+  { -52.3290939F, -68.9417F, -1473.11401F },
 
   /* Variable: Md4
    * Referenced by: '<S4>/Gain3'
    */
-  { 0.0331F, 0.0152F, 0.248F },
+  { 0.17115441F, 0.095495522F, 0.21619232F },
 
   /* Variable: Md5
    * Referenced by: '<S4>/Gain4'
    */
-  { 28.8F, 31.6F, 1437.0F },
+  { 52.3290939F, 68.9417F, 1473.11401F },
 
   /* Variable: Md6
    * Referenced by: '<S4>/Gain5'
    */
-  { 1.0F, 0.0F, 0.0F, 0.0F },
+  { 1.0F, 0.0F, 0.0F, -0.0F },
 
   /* Variable: Md7
    * Referenced by: '<S4>/Gain6'
    */
-  { 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F },
+  { 0.0F, 0.0F, 1.0F, -0.0F, 0.0F, 1.0F, 0.0F, 0.0F, -0.0F, -0.0F, 0.0F, 1.0F },
 
   /* Variable: fGyroBias
    * Referenced by: '<S2>/gyro bias'
    */
-  0.0F,
+  -256.703064F,
 
   /* Variable: fWheelRadius
    * Referenced by: '<S2>/convert to meters'
@@ -336,7 +338,7 @@ Parameters_LabB_ObserverAndCont LabB_ObserverAndControllerOve_P = {
   /* Computed Parameter: converttoradianssec_Gain
    * Referenced by: '<S2>/convert to radians//sec'
    */
-  -0.000133231239F,
+  0.000133158057F,
 
   /* Computed Parameter: SaturationVsupplytoVsupply_Lowe
    * Referenced by: '<S53>/Saturation -Vsupply to Vsupply'
@@ -356,7 +358,7 @@ Parameters_LabB_ObserverAndCont LabB_ObserverAndControllerOve_P = {
   /* Computed Parameter: ManualSwitch1_CurrentSetting
    * Referenced by: '<S4>/Manual Switch1'
    */
-  1U,
+  0U,
 
   /* Computed Parameter: Constant_Value_d
    * Referenced by: '<S9>/Constant'

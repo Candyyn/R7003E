@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.705
  * Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
- * C/C++ source code generated on : Mon Nov 10 13:18:34 2025
+ * C/C++ source code generated on : Thu Jan 22 10:53:52 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -22,8 +22,6 @@
 #ifndef LabB_ObserverAndControllerOverRobot_COMMON_INCLUDES_
 #define LabB_ObserverAndControllerOverRobot_COMMON_INCLUDES_
 #include "rtwtypes.h"
-#include "rtw_extmode.h"
-#include "sysran_types.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
 #include "MW_SerialRead.h"
@@ -35,45 +33,18 @@
 #endif                /* LabB_ObserverAndControllerOverRobot_COMMON_INCLUDES_ */
 
 #include "LabB_ObserverAndControllerOverRobot_types.h"
+#include <stddef.h>
 #include <string.h>
 #include "rt_nonfinite.h"
 #include "MW_target_hardware_resources.h"
 
 /* Macros for accessing real-time model data structure */
-#ifndef rtmGetFinalTime
-#define rtmGetFinalTime(rtm)           ((rtm)->Timing.tFinal)
-#endif
-
-#ifndef rtmGetRTWExtModeInfo
-#define rtmGetRTWExtModeInfo(rtm)      ((rtm)->extModeInfo)
-#endif
-
 #ifndef rtmGetErrorStatus
 #define rtmGetErrorStatus(rtm)         ((rtm)->errorStatus)
 #endif
 
 #ifndef rtmSetErrorStatus
 #define rtmSetErrorStatus(rtm, val)    ((rtm)->errorStatus = (val))
-#endif
-
-#ifndef rtmGetStopRequested
-#define rtmGetStopRequested(rtm)       ((rtm)->Timing.stopRequestedFlag)
-#endif
-
-#ifndef rtmSetStopRequested
-#define rtmSetStopRequested(rtm, val)  ((rtm)->Timing.stopRequestedFlag = (val))
-#endif
-
-#ifndef rtmGetStopRequestedPtr
-#define rtmGetStopRequestedPtr(rtm)    (&((rtm)->Timing.stopRequestedFlag))
-#endif
-
-#ifndef rtmGetTFinal
-#define rtmGetTFinal(rtm)              ((rtm)->Timing.tFinal)
-#endif
-
-#ifndef rtmGetTPtr
-#define rtmGetTPtr(rtm)                (&)
 #endif
 
 #define LabB_ObserverAndControllerOverRobot_M (LabB_ObserverAndControllerOv_M)
@@ -359,38 +330,7 @@ struct Parameters_LabB_ObserverAndCont_ {
 
 /* Real-time Model Data Structure */
 struct tag_RTM_LabB_ObserverAndControl {
-  const char_T *errorStatus;
-  RTWExtModeInfo *extModeInfo;
-
-  /*
-   * Sizes:
-   * The following substructure contains sizes information
-   * for many of the model attributes such as inputs, outputs,
-   * dwork, sample times, etc.
-   */
-  struct {
-    uint32_T checksums[4];
-  } Sizes;
-
-  /*
-   * SpecialInfo:
-   * The following substructure contains special information
-   * related to other components that are dependent on RTW.
-   */
-  struct {
-    const void *mappingInfo;
-  } SpecialInfo;
-
-  /*
-   * Timing:
-   * The following substructure contains information regarding
-   * the timing information for the model.
-   */
-  struct {
-    uint32_T clockTick0;
-    time_T tFinal;
-    boolean_T stopRequestedFlag;
-  } Timing;
+  const char_T * volatile errorStatus;
 };
 
 /* Block parameters (default storage) */

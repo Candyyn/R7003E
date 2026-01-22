@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.705
  * Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
- * C/C++ source code generated on : Mon Nov 10 13:18:34 2025
+ * C/C++ source code generated on : Thu Jan 22 10:53:52 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -20,14 +20,7 @@
 #ifndef LabB_ObserverAndControllerOverRobot_private_h_
 #define LabB_ObserverAndControllerOverRobot_private_h_
 #include "rtwtypes.h"
-#include "multiword_types.h"
 #include "LabB_ObserverAndControllerOverRobot_types.h"
-
-/* Private macros used by the generated code to access rtModel */
-#ifndef rtmSetTFinal
-#define rtmSetTFinal(rtm, val)         ((rtm)->Timing.tFinal = (val))
-#endif
-
 #ifndef UCHAR_MAX
 #include <limits.h>
 #endif

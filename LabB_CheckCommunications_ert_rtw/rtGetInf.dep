@@ -1,11 +1,11 @@
 rtGetInf.o: \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtGetInf.c \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtGetInf.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtGetInf.c \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtGetInf.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtGetInf.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtGetInf.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h:

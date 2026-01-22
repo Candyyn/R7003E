@@ -1,32 +1,32 @@
 xcp_drv_rtiostream.o: \
- /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv_rtiostream.c \
- /Applications/MATLAB_R2025b.app/toolbox/coder/rtiostream/src/rtiostream.h \
- /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/common/xcp_common.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
- /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/include/xcp_platform.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/xcp_platform_custom.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h \
- /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/include/xcp.h \
- /Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv.h
+ /usr/local/MATLAB/R2025b/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv_rtiostream.c \
+ /usr/local/MATLAB/R2025b/toolbox/coder/rtiostream/src/rtiostream.h \
+ /usr/local/MATLAB/R2025b/toolbox/coder/xcp/src/target/server/common/xcp_common.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
+ /usr/local/MATLAB/R2025b/toolbox/coder/xcp/src/target/server/platform/include/xcp_platform.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/xcp_platform_custom.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h \
+ /usr/local/MATLAB/R2025b/toolbox/coder/xcp/src/target/server/include/xcp.h \
+ /usr/local/MATLAB/R2025b/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv.h
 
-/Applications/MATLAB_R2025b.app/toolbox/coder/rtiostream/src/rtiostream.h:
+/usr/local/MATLAB/R2025b/toolbox/coder/rtiostream/src/rtiostream.h:
 
-/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/common/xcp_common.h:
+/usr/local/MATLAB/R2025b/toolbox/coder/xcp/src/target/server/common/xcp_common.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
 
-/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/include/xcp_platform.h:
+/usr/local/MATLAB/R2025b/toolbox/coder/xcp/src/target/server/platform/include/xcp_platform.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/xcp_platform_custom.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/xcp_platform_custom.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h:
 
-/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/include/xcp.h:
+/usr/local/MATLAB/R2025b/toolbox/coder/xcp/src/target/server/include/xcp.h:
 
-/Applications/MATLAB_R2025b.app/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv.h:
+/usr/local/MATLAB/R2025b/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv.h:

@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.705
  * Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
- * C/C++ source code generated on : Mon Nov 10 13:18:34 2025
+ * C/C++ source code generated on : Thu Jan 22 10:53:52 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -821,14 +821,6 @@ void LabB_ObserverAndControllerOverRobot_step(void)
       (LabB_ObserverAndControllerOve_P.Internal_3_3_A_a)*
       LabB_ObserverAndControlle_DWork.Internal_3_3_DSTATE_o;
   }
-
-  /* Update absolute time for base rate */
-  /* The "clockTick0" counts the number of times the code of this task has
-   * been executed. The resolution of this integer timer is 0.005, which is the step size
-   * of the task. Size of "clockTick0" ensures timer will not overflow during the
-   * application lifespan selected.
-   */
-  LabB_ObserverAndControllerOv_M->Timing.clockTick0++;
 }
 
 /* Model initialize function */
@@ -839,40 +831,8 @@ void LabB_ObserverAndControllerOverRobot_initialize(void)
   /* initialize non-finites */
   rt_InitInfAndNaN(sizeof(real_T));
 
-  /* non-finite (run-time) assignments */
-  LabB_ObserverAndControllerOve_P.fGyroBias = rtNaNF;
-
-  /* initialize real-time model */
-  (void) memset((void *)LabB_ObserverAndControllerOv_M, 0,
-                sizeof(RT_MODEL_LabB_ObserverAndContro));
-  rtmSetTFinal(LabB_ObserverAndControllerOv_M, -1);
-
-  /* External mode info */
-  LabB_ObserverAndControllerOv_M->Sizes.checksums[0] = (1113630552U);
-  LabB_ObserverAndControllerOv_M->Sizes.checksums[1] = (1615197706U);
-  LabB_ObserverAndControllerOv_M->Sizes.checksums[2] = (4192355877U);
-  LabB_ObserverAndControllerOv_M->Sizes.checksums[3] = (3574713691U);
-
-  {
-    static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
-    static RTWExtModeInfo rt_ExtModeInfo;
-    static const sysRanDType *systemRan[8];
-    LabB_ObserverAndControllerOv_M->extModeInfo = (&rt_ExtModeInfo);
-    rteiSetSubSystemActiveVectorAddresses(&rt_ExtModeInfo, systemRan);
-    systemRan[0] = &rtAlwaysEnabled;
-    systemRan[1] = &rtAlwaysEnabled;
-    systemRan[2] = &rtAlwaysEnabled;
-    systemRan[3] = &rtAlwaysEnabled;
-    systemRan[4] = &rtAlwaysEnabled;
-    systemRan[5] = &rtAlwaysEnabled;
-    systemRan[6] = &rtAlwaysEnabled;
-    systemRan[7] = &rtAlwaysEnabled;
-    rteiSetModelMappingInfoPtr(LabB_ObserverAndControllerOv_M->extModeInfo,
-      &LabB_ObserverAndControllerOv_M->SpecialInfo.mappingInfo);
-    rteiSetChecksumsPtr(LabB_ObserverAndControllerOv_M->extModeInfo,
-                        LabB_ObserverAndControllerOv_M->Sizes.checksums);
-    rteiSetTFinalTicks(LabB_ObserverAndControllerOv_M->extModeInfo, -1);
-  }
+  /* initialize error status */
+  rtmSetErrorStatus(LabB_ObserverAndControllerOv_M, (NULL));
 
   /* states (dwork) */
   (void) memset((void *)&LabB_ObserverAndControlle_DWork, 0,

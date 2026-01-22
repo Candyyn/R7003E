@@ -1,47 +1,47 @@
 MW_SerialWrite.o: \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_SerialWrite.cpp \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WCharacter.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WString.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/HardwareSerial.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Stream.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Print.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Printable.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/USBAPI.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_SerialWrite.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rtwtypes.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/peripheralIncludes.h
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_SerialWrite.cpp \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WCharacter.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WString.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/HardwareSerial.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Stream.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Print.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Printable.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/USBAPI.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_SerialWrite.h \
+ /home/emil/Skrivbord/r7003/LabB_ObserverAndControllerOverRobot_ert_rtw/rtwtypes.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/peripheralIncludes.h
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WCharacter.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WCharacter.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WString.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/WString.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/HardwareSerial.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/HardwareSerial.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Stream.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Stream.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Print.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Print.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Printable.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Printable.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/USBAPI.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/USBAPI.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_SerialWrite.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_SerialWrite.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_ObserverAndControllerOverRobot_ert_rtw/rtwtypes.h:
+/home/emil/Skrivbord/r7003/LabB_ObserverAndControllerOverRobot_ert_rtw/rtwtypes.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/peripheralIncludes.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/peripheralIncludes.h:

@@ -1,80 +1,80 @@
 LabB_CheckCommunications.o: \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.c \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
- /Applications/MATLAB_R2025b.app/simulink/include/rtw_extmode.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
- /Applications/MATLAB_R2025b.app/simulink/include/sysran_types.h \
- /Applications/MATLAB_R2025b.app/simulink/include/rtw_continuous.h \
- /Applications/MATLAB_R2025b.app/simulink/include/rtw_solver.h \
- /Applications/MATLAB_R2025b.app/simulink/include/rtw_continuous.h \
- /Users/emil/Documents/MATLAB/RASPlib/include/MPU6050wrapper.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_arduino_digitalio.h \
- /Users/emil/Documents/MATLAB/RASPlib/include/encoder_arduino.h \
- /Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_PWM.h \
- /Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_SVD.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_types.h \
- /Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_SVD.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtGetNaN.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/MW_target_hardware_resources.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
- /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_private.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/multiword_types.h \
- /Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rt_defines.h
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.c \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
+ /usr/local/MATLAB/R2025b/simulink/include/rtw_extmode.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
+ /usr/local/MATLAB/R2025b/simulink/include/sysran_types.h \
+ /usr/local/MATLAB/R2025b/simulink/include/rtw_continuous.h \
+ /usr/local/MATLAB/R2025b/simulink/include/rtw_solver.h \
+ /usr/local/MATLAB/R2025b/simulink/include/rtw_continuous.h \
+ /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ (RASPLib)/RASPlib/include/MPU6050wrapper.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_arduino_digitalio.h \
+ /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ (RASPLib)/RASPlib/include/encoder_arduino.h \
+ /usr/local/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_PWM.h \
+ /usr/local/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_SVD.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_types.h \
+ /usr/local/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_SVD.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtGetNaN.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/MW_target_hardware_resources.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h \
+ /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_private.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/multiword_types.h \
+ /home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rt_defines.h
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
 
-/Applications/MATLAB_R2025b.app/simulink/include/rtw_extmode.h:
+/usr/local/MATLAB/R2025b/simulink/include/rtw_extmode.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
 
-/Applications/MATLAB_R2025b.app/simulink/include/sysran_types.h:
+/usr/local/MATLAB/R2025b/simulink/include/sysran_types.h:
 
-/Applications/MATLAB_R2025b.app/simulink/include/rtw_continuous.h:
+/usr/local/MATLAB/R2025b/simulink/include/rtw_continuous.h:
 
-/Applications/MATLAB_R2025b.app/simulink/include/rtw_solver.h:
+/usr/local/MATLAB/R2025b/simulink/include/rtw_solver.h:
 
-/Applications/MATLAB_R2025b.app/simulink/include/rtw_continuous.h:
+/usr/local/MATLAB/R2025b/simulink/include/rtw_continuous.h:
 
-/Users/emil/Documents/MATLAB/RASPlib/include/MPU6050wrapper.h:
+/home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ (RASPLib)/RASPlib/include/MPU6050wrapper.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_arduino_digitalio.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include/MW_arduino_digitalio.h:
 
-/Users/emil/Documents/MATLAB/RASPlib/include/encoder_arduino.h:
+/home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ (RASPLib)/RASPlib/include/encoder_arduino.h:
 
-/Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_PWM.h:
+/usr/local/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_PWM.h:
 
-/Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_SVD.h:
+/usr/local/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_SVD.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_types.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_types.h:
 
-/Applications/MATLAB_R2025b.app/toolbox/target/shared/svd/common/include/MW_SVD.h:
+/usr/local/MATLAB/R2025b/toolbox/target/shared/svd/common/include/MW_SVD.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rtGetNaN.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rtGetNaN.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/MW_target_hardware_resources.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/MW_target_hardware_resources.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/Arduino.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/cores/arduino/binary.h:
 
-/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h:
+/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/variants/mega/pins_arduino.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_private.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_private.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/multiword_types.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/multiword_types.h:
 
-/Users/emil/Desktop/MatlabAndSimulink/LabB_CheckCommunications_ert_rtw/rt_defines.h:
+/home/emil/Skrivbord/r7003/LabB_CheckCommunications_ert_rtw/rt_defines.h:

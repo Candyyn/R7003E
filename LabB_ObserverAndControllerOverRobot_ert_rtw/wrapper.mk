@@ -80,7 +80,7 @@ EXECUTE = $(PRODUCT)
 
 
 # Builder: GMAKE Utility
-MAKE_PATH = /Applications/MATLAB_R2025b.app/bin/maca64
+MAKE_PATH = /usr/local/MATLAB/R2025b/bin/glnxa64
 MAKE = $(MAKE_PATH)/gmake
 
 
@@ -164,12 +164,12 @@ SHAREDLIB_LDFLAGS += $(SHAREDLIB_LDFLAGS_SKIPFORSIL)
 ###########################################################################
 ## Define Macros
 ###########################################################################
-SLMKPATH=/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/staticmakefiles
+SLMKPATH=/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/staticmakefiles
 MODELMK=LabB_ObserverAndControllerOverRobot.mk
-SLIB_PATH=/Users/emil/Documents/MATLAB/R2025b/ArduinoStaticLibrary/ArduinoMega2560/FasterRuns
+SLIB_PATH=/home/emil/Documents/MATLAB/R2025b/ArduinoStaticLibrary/ArduinoMega2560/FasterRuns
 VARIANT_HEADER_PATH=$(ARDUINO_AVR_ROOT)/hardware/avr/1.8.3/variants/mega
-ARDUINO_SKETCHBOOK_ROOT=/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/user/libraries
-ARDUINO_BASESUPPORTPKG_ROOT=/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase
+ARDUINO_SKETCHBOOK_ROOT=/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/user/libraries
+ARDUINO_BASESUPPORTPKG_ROOT=/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase
 
 
 ###########################################################################
@@ -196,6 +196,6 @@ export ARDUINO_BASESUPPORTPKG_ROOT
 .PHONY : all
 all : 
 	@echo "### Generating static library."
-	"$(MAKE)" -j9 -C "$(SLMKPATH)" SHELL="$(SHELL)" -f avrcore.mk all
-	"$(MAKE)" -j9 SHELL="$(SHELL)" -f "$(MODELMK)" all
+	"$(MAKE)" -j7 -C "$(SLMKPATH)" SHELL="$(SHELL)" -f avrcore.mk all
+	"$(MAKE)" -j7 SHELL="$(SHELL)" -f "$(MODELMK)" all
 

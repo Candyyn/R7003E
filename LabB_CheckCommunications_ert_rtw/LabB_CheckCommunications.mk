@@ -2,7 +2,7 @@
 ## Makefile generated for component 'LabB_CheckCommunications'. 
 ## 
 ## Makefile     : LabB_CheckCommunications.mk
-## Generated on : Mon Nov 10 12:57:41 2025
+## Generated on : Wed Jan 21 10:38:11 2026
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/LabB_CheckCommunications.elf
 ## Product type : executable
 ## 
@@ -18,18 +18,18 @@
 
 PRODUCT_NAME              = LabB_CheckCommunications
 MAKEFILE                  = LabB_CheckCommunications.mk
-MATLAB_ROOT               = /Applications/MATLAB_R2025b.app
-MATLAB_BIN                = /Applications/MATLAB_R2025b.app/bin
-MATLAB_ARCH_BIN           = $(MATLAB_BIN)/maca64
-START_DIR                 = /Users/emil/Desktop/MatlabAndSimulink
+MATLAB_ROOT               = /usr/local/MATLAB/R2025b
+MATLAB_BIN                = /usr/local/MATLAB/R2025b/bin
+MATLAB_ARCH_BIN           = $(MATLAB_BIN)/glnxa64
+START_DIR                 = /home/emil/Skrivbord/r7003
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
 TGT_FCN_LIB               = None
 MODEL_HAS_DYNAMICALLY_LOADED_SFCNS = 0
 RELATIVE_PATH_TO_ANCHOR   = ..
-SLIB_PATH                 = /Users/emil/Documents/MATLAB/R2025b/ArduinoStaticLibrary/ArduinoMega2560/FasterRuns
-SSLIB_PATH                = /Users/emil/Documents/MATLAB/R2025b/ArduinoStaticLibrary/ArduinoMega2560/FasterRuns
+SLIB_PATH                 = /home/emil/Documents/MATLAB/R2025b/ArduinoStaticLibrary/ArduinoMega2560/FasterRuns
+SSLIB_PATH                = /home/emil/Documents/MATLAB/R2025b/ArduinoStaticLibrary/ArduinoMega2560/FasterRuns
 C_STANDARD_OPTS           = 
 CPP_STANDARD_OPTS         = 
 
@@ -115,7 +115,7 @@ DOWNLOAD = "$(DOWNLOAD_PATH)/avrdude"
 EXECUTE = $(PRODUCT)
 
 # Builder: Make Tool
-MAKE_PATH = %MATLAB%/bin/maca64
+MAKE_PATH = %MATLAB%/bin/glnxa64
 MAKE = "$(MAKE_PATH)/gmake"
 
 
@@ -194,7 +194,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR) -I/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire -I/Users/emil/Documents/MATLAB/RASPlib/include -I/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src -I/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility -I/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include -I/Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/utility -I/Users/emil/Documents/MATLAB/RASPlib/src -I$(MATLAB_ROOT)/toolbox/target/shared/svd/common/include -I$(START_DIR)/LabB_CheckCommunications_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/common -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/src -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/platform/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/platform/default -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src -I$(ARDUINO_AVR_ROOT)/hardware/avr/$(AVR_LIB_VERSION)/cores/arduino -I$(ARDUINO_AVR_ROOT)/hardware/avr/$(AVR_LIB_VERSION)/variants/mega -I/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include -I/Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include -I$(ARDUINO_AVR_ROOT)/tools/avr-gcc/$(AVR_GCC_LIB_VERSION)/avr/include
+INCLUDES_BUILDINFO = -I$(START_DIR) -I/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire -I/home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/include -I/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src -I/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility -I/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/include -I/home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/utility -I/home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/src -I$(MATLAB_ROOT)/toolbox/target/shared/svd/common/include -I$(START_DIR)/LabB_CheckCommunications_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/common -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/src -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/platform/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/platform/default -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/include -I$(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src -I$(ARDUINO_AVR_ROOT)/hardware/avr/$(AVR_LIB_VERSION)/cores/arduino -I$(ARDUINO_AVR_ROOT)/hardware/avr/$(AVR_LIB_VERSION)/variants/mega -I/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/include -I/home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/include -I$(ARDUINO_AVR_ROOT)/tools/avr-gcc/$(AVR_GCC_LIB_VERSION)/avr/include
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -202,7 +202,7 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-DEFINES_ = -DXCP_ADDRESS_GRANULARITY=XCP_ADDRESS_GRANULARITY_BYTE -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DMW_TIMERID=5 -DMW_PRESCALAR=256 -DMW_TIMERCOUNT=64911 -DMW_SCHEDULERCOUNTER=1 -DARDUINO_NUM_SERIAL_PORTS=4 -DARDUINO_SERIAL_RECEIVE_BUFFER_SIZE=64 -D_RTT_BAUDRATE_SERIAL0_=115200 -D_RTT_BAUDRATE_SERIAL1_=9600 -D_RTT_BAUDRATE_SERIAL2_=9600 -D_RTT_BAUDRATE_SERIAL3_=9600 -D_RTT_CONFIG_SERIAL0_=SERIAL_8N1 -D_RTT_CONFIG_SERIAL1_=SERIAL_8N1 -D_RTT_CONFIG_SERIAL2_=SERIAL_8N1 -D_RTT_CONFIG_SERIAL3_=SERIAL_8N1 -D_RTT_ANALOG_REF_=0 -DMW_RTIO_SERIAL0 -DMW_NUM_PINS=70 -D_RTT_PWM_BLOCKS_ -D_ONBOARD_EEPROM_SIZE_=4096
+DEFINES_ = -DXCP_ADDRESS_GRANULARITY=XCP_ADDRESS_GRANULARITY_BYTE -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DMW_TIMERID=5 -DMW_PRESCALAR=256 -DMW_TIMERCOUNT=64911 -DMW_SCHEDULERCOUNTER=1 -DARDUINO_NUM_SERIAL_PORTS=4 -DARDUINO_SERIAL_RECEIVE_BUFFER_SIZE=64 -D_RTT_BAUDRATE_SERIAL0_=9600 -D_RTT_BAUDRATE_SERIAL1_=9600 -D_RTT_BAUDRATE_SERIAL2_=9600 -D_RTT_BAUDRATE_SERIAL3_=9600 -D_RTT_CONFIG_SERIAL0_=SERIAL_8N1 -D_RTT_CONFIG_SERIAL1_=SERIAL_8N1 -D_RTT_CONFIG_SERIAL2_=SERIAL_8N1 -D_RTT_CONFIG_SERIAL3_=SERIAL_8N1 -D_RTT_ANALOG_REF_=0 -DMW_RTIO_SERIAL0 -DMW_NUM_PINS=70 -D_RTT_PWM_BLOCKS_ -D_ONBOARD_EEPROM_SIZE_=4096
 DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTERMFCN=1 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DEXT_MODE=1 -DINTEGER_CODE=0 -DMT=0
 DEFINES_CUSTOM = 
 DEFINES_OPTS = -DXCP_EXTMODE_SIMULATION_TIME_IN_TICKS -DXCP_DAQ_SUPPORT -DXCP_CALIBRATION_SUPPORT -DXCP_TIMESTAMP_SUPPORT -DXCP_TIMESTAMP_BASED_ON_SIMULATION_TIME -DXCP_SET_MTA_SUPPORT -DEXTMODE_XCP_TRIGGER_SUPPORT -DXCP_MEM_BLOCK_1_SIZE=32 -DXCP_MEM_BLOCK_1_NUMBER=1 -DXCP_MEM_BLOCK_2_SIZE=56 -DXCP_MEM_BLOCK_2_NUMBER=1 -DXCP_MEM_BLOCK_3_SIZE=32 -DXCP_MEM_BLOCK_3_NUMBER=1 -DXCP_MEM_RESERVED_POOLS_TOTAL_SIZE=277 -DXCP_MEM_RESERVED_POOLS_NUMBER=2 -DXCP_MEM_DAQ_RESERVED_POOL_BLOCKS_NUMBER=3 -DXCP_MEM_DAQ_RESERVED_POOLS_NUMBER=1 -DXCP_MIN_EVENT_NO_RESERVED_POOL=1 -DXCP_MAX_CTO_SIZE=32 -DXCP_MAX_DTO_SIZE=65532 -DXCP_MAX_ODT_ENTRY_SIZE=255 -DEXTMODE_STATIC -DEXTMODE_STATIC_SIZE=1000000 -DON_TARGET_WAIT_FOR_START=1 -DTID01EQ=0
@@ -215,7 +215,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/Wire.cpp /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/twi.c /Users/emil/Documents/MATLAB/RASPlib/src/I2Cdev.cpp /Users/emil/Documents/MATLAB/RASPlib/src/MPU6050.cpp /Users/emil/Documents/MATLAB/RASPlib/src/MPU6050wrapper.cpp /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_arduino_digitalio.cpp /Users/emil/Documents/MATLAB/RASPlib/src/encoder_arduino.cpp /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_PWM.cpp /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_PWMDriver.c /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/ArduinoPinHandleMap.cpp $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_mode.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_data.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/rtGetInf.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/rtGetNaN.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/rt_nonfinite.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_common.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_classic_trigger.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src/xcp.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src/xcp_standard.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src/xcp_daq.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src/xcp_calibration.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/src/xcp_fifo.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/src/xcp_transport.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/platform/default/xcp_mem_default.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv_rtiostream.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/common/xcp_utils.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/src/xcp_frame_serial.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_param_default_serial.c /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/MW_ArduinoHWInit.cpp /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/src/arduinoAVRScheduler.cpp /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/platform_timer.cpp /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/rtiostream_serial_daemon.cpp
+SRCS = /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/Wire.cpp /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/twi.c /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/src/I2Cdev.cpp /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/src/MPU6050.cpp /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/src/MPU6050wrapper.cpp /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_arduino_digitalio.cpp /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/src/encoder_arduino.cpp /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_PWM.cpp /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_PWMDriver.c /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/ArduinoPinHandleMap.cpp $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_mode.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/LabB_CheckCommunications_data.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/rtGetInf.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/rtGetNaN.c $(START_DIR)/LabB_CheckCommunications_ert_rtw/rt_nonfinite.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_common.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_classic_trigger.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src/xcp.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src/xcp_standard.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src/xcp_daq.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/protocol/src/xcp_calibration.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/src/xcp_fifo.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/src/xcp_transport.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/platform/default/xcp_mem_default.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/platform/default/xcp_drv_rtiostream.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/common/xcp_utils.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/server/transport/src/xcp_frame_serial.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_param_default_serial.c /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/MW_ArduinoHWInit.cpp /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/src/arduinoAVRScheduler.cpp /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/platform_timer.cpp /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/rtiostream_serial_daemon.cpp
 
 MAIN_SRC = $(START_DIR)/LabB_CheckCommunications_ert_rtw/ert_main.c
 
@@ -437,83 +437,83 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/%.c
+%.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/%.s
+%.S.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/%.s
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/%.S
+%.S.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/%.S
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/%.cpp
+%.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/%.c
+%.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/%.s
+%.S.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/%.s
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/%.S
+%.S.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/%.S
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/%.cpp
+%.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/RASPlib/src/%.c
+%.o : ./tmp/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/RASPlib/src/%.s
+%.S.o : ./tmp/%.s
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/RASPlib/src/%.S
+%.S.o : ./tmp/%.S
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/RASPlib/src/%.cpp
+%.o : ./tmp/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/%.c
+%.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/%.s
+%.S.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/%.s
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/%.S
+%.S.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/%.S
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/%.cpp
+%.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/%.c
+%.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/%.s
+%.S.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/%.s
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.S.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/%.S
+%.S.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/%.S
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/%.cpp
+%.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
@@ -661,43 +661,43 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-Wire.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/Wire.cpp
+Wire.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/Wire.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-twi.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/twi.c
+twi.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/3P.instrset/arduinoide.instrset/aCLI/data/packages/arduino/hardware/avr/1.8.3/libraries/Wire/src/utility/twi.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-I2Cdev.o : /Users/emil/Documents/MATLAB/RASPlib/src/I2Cdev.cpp
+I2Cdev.o : /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/src/I2Cdev.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-MPU6050.o : /Users/emil/Documents/MATLAB/RASPlib/src/MPU6050.cpp
+MPU6050.o : /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/src/MPU6050.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-MPU6050wrapper.o : /Users/emil/Documents/MATLAB/RASPlib/src/MPU6050wrapper.cpp
+MPU6050wrapper.o : /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/src/MPU6050wrapper.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-MW_arduino_digitalio.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_arduino_digitalio.cpp
+MW_arduino_digitalio.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_arduino_digitalio.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-encoder_arduino.o : /Users/emil/Documents/MATLAB/RASPlib/src/encoder_arduino.cpp
+encoder_arduino.o : /home/emil/MATLAB\ Add-Ons/Collections/Rensselaer\ Arduino\ Support\ Package\ Library\ \(RASPLib\)/RASPlib/src/encoder_arduino.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-MW_PWM.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_PWM.cpp
+MW_PWM.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_PWM.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-MW_PWMDriver.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_PWMDriver.c
+MW_PWMDriver.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/MW_PWMDriver.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-ArduinoPinHandleMap.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/ArduinoPinHandleMap.cpp
+ArduinoPinHandleMap.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/ArduinoPinHandleMap.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
@@ -781,23 +781,23 @@ xcp_ext_param_default_serial.o : $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-MW_ArduinoHWInit.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/MW_ArduinoHWInit.cpp
+MW_ArduinoHWInit.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/MW_ArduinoHWInit.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-io_wrappers.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp
+io_wrappers.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-arduinoAVRScheduler.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/src/arduinoAVRScheduler.cpp
+arduinoAVRScheduler.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/scheduler/src/arduinoAVRScheduler.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-platform_timer.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/platform_timer.cpp
+platform_timer.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/platform_timer.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-rtiostream_serial_daemon.o : /Users/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/rtiostream_serial_daemon.cpp
+rtiostream_serial_daemon.o : /home/emil/Documents/MATLAB/SupportPackages/R2025b/toolbox/target/supportpackages/arduinotarget/src/rtiostream_serial_daemon.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
