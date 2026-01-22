@@ -1,0 +1,9 @@
+slprj/*
+*.eep
+*.elf
+*.hex
+*_ert_rtf/*
+*_ert_rtw/*
+*.autosave
+*.r2017a
+*.slxc
