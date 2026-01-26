@@ -1,14 +1,14 @@
-close all;
-clear all;
-clc;
+%close all;
+%clear all;
+%clc;
 
 
-LabB_solutions;
+%LabB_solutions;
 %% Task
 C = [1 0 0 0;
      0 0 1 0];
 
-poles = dis_poles .* [2; 3; 4; 5;];
+poles = dis_poles .* 4;
 
 O=[C; C*A; C*A^2; C*A^3];
 ran = rank(O)
@@ -58,8 +58,9 @@ M7 = T(1:4,2:4)
 C_est = [1 0 0 0 ; 
          0 0 1 0];
 
-obs_poles = dis_poles * 2
+obs_poles = dis_poles * 4
 L = (place(A', C', obs_poles))'
+size(L)
 
 %L = (place(A', C_luen', poles)).';
 

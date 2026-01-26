@@ -42,7 +42,8 @@ p_des = [p1, p2, pc(3, 1), pc(1,1)]
 K = place(A,B,p_des)
 
 
-C_bar = [5 1 3 1];%[5 1 10 2];
+%C_bar = [5 1 3 1];%[5 1 10 2];
+
 D_bar = 0;
 
 
@@ -51,14 +52,15 @@ D_bar = 0;
 C_bar = [10 2 10 1];
 
 s = tf('s');
-sys_pos_ss = ss(A, B, C, D_bar);
+
+[num, den] = ss2tf(A,B,C_bar, D, 1)
+
+sys_pos_ss = ss(A, B, C_bar, D);
 G_pos = tf(sys_pos_ss);
 G_pos_min = minreal(G_pos);
 
-[num_pos, den_pos] = tfdata(G_pos_min, 'v');
-
 A_neg      = -A;
-sys_neg_ss = ss(A_neg, B, C, 0);
+sys_neg_ss = ss(A_neg, B, C_bar, D);
 G_neg      = tf(sys_neg_ss);
 G_neg_min  = minreal(G_neg);
 
@@ -71,7 +73,7 @@ neg_roots = all_roots(all_roots<=0);
 
 figure;
 rlocus(sysGG);
-
+axis([-20 20 -20 20])
     
 Q = rho*transpose(C_bar)*C_bar;
      

@@ -128,15 +128,76 @@ dis_poles = eig(A - B*K)
 
 % Full order Luenberger observer 
 
-C_luen = [1 0 0 0;
-          0 0 1 0];
-O=[C_luen; C_luen*A; C_luen*A^2; C_luen*A^3];
+% C_luen = [1 0 0 0;
+%           0 0 1 0];
+% %O=[C_luen; C_luen*A; C_luen*A^2; C_luen*A^3]; ran = rank(O)
+% 
+% obs_poles = dis_poles * 4
+% L = (place(A', C_luen', obs_poles))'
+% O=[C; C*A; C*A^2; C*A^3];
+% rank(O)
+% 
+% % Reduced order state Luenberger observer
+% 
+% C_acc=[1 0 0 0];
+% C_nacc=[0 0 1 0];
+% 
+% 
+% %C_acc = [
+% %    1 0 0 0   % theta_b 0 0 1 0   % x_w
+% %];
+% 
+% V = null(C_acc);  
+% T_inv = [C_acc; V'];
+% T = inv(T_inv);
+% 
+% %T_inv=[C_acc;
+% %     0 1 0 0; 0 0 1 0; 0 0 0 1];
+% %T=inv(T_inv);
+% 
+% A_tilde=T_inv*A*T;
+% B_tilde=T_inv*B;
+% 
+% C_acc_tilde = C_acc*T;
+% C_nacc_tilde = C_nacc * T;
+% 
+% A_yy=A_tilde(1,1);
+% A_yx=A_tilde(1,2:4);
+% A_xy=A_tilde(2:4,1);
+% A_xx=A_tilde(2:4,2:4);
+% 
+% C_tilde_y = C_nacc_tilde(1,1);
+% C_tilde_chi = C_nacc_tilde(1,2:4);
+% 
+% B_tilde_y = B_tilde(1,1);
+% B_tilde_chi = B_tilde(2:4,1);
+% CC = [A_yx; C_tilde_chi];
+% 
+% 
+% L_redu = (place(A_xx', CC',obs_poles(2:4, 1)))'
+% 
+% 
+% L_acc = L_redu(1:3,1);
+% L_nacc= L_redu(1:3,2);
+% 
+% 
+% M1 = A_xx - L_acc*A_yx-L_nacc*C_tilde_chi
+% M2 = B_tilde_chi - L_acc *B_tilde_y
+% M3 = (A_xy - L_acc*A_yy - L_nacc*C_tilde_y)
+% M4 = L_nacc
+% M5 = L_acc
+% M6 = T(1:4,1)
+% M7 = T(1:4,2:4)
+
+% Reduced order state Luenberger observer
+C = [1 0 0 0;
+     0 0 1 0];
+
+poles = dis_poles .* 4;
+
+O=[C; C*A; C*A^2; C*A^3];
 ran = rank(O)
 
-obs_poles = dis_poles * 2
-L = (place(A', C_luen', obs_poles))'
-
-% Reduced order state Luenberger observer 
 
 C_acc=[1 0 0 0];
 C_nacc=[0 0 1 0];
@@ -164,11 +225,11 @@ C_tilde_chi = C_nacc_tilde(1,2:4);
 B_tilde_y = B_tilde(1,1);
 B_tilde_chi = B_tilde(2:4,1);
 CC = [A_yx; C_tilde_chi];
-L_redu = (place(A_xx', CC',3*dis_poles(2:4, 1)))'
+L = (place(A_xx', CC',3*dis_poles(2:4, 1)))'
 
 
-L_acc = L_redu(1:3,1);
-L_nacc= L_redu(1:3,2);
+L_acc = L(1:3,1);
+L_nacc= L(1:3,2);
 
 
 M1 = A_xx - L_acc*A_yx-L_nacc*C_tilde_chi
@@ -180,7 +241,138 @@ M6 = T(1:4,1)
 M7 = T(1:4,2:4)
 
 
+% Full order Luenberger observer 
+C_est = [1 0 0 0 ; 
+         0 0 1 0];
+
+obs_poles = dis_poles * 4
+L = (place(A', C', obs_poles))'
+
 %% 4.9.1 Descrete
+scaling = 4;
+freq = 200;
+fSamplingPeriod = 1/freq;
+SamplingPeriod = 0.0219;
+% Convert our system from continues to descrete
+system_d = c2d(ss(A,B,C,D), fSamplingPeriod, 'zoh'); 
+
+Ad = system_d.A
+Bd = system_d.B
+Cd = system_d.C
+Dd = system_d.D
+
+% Map to z 
+p_controller = dis_poles
+z_controller = exp(p_controller * fSamplingPeriod)
+
+abs(z_controller) % Should be < 1
+
+
+% Discrete Full luenberger
+
+C_luen = [1 0 0 0;
+          0 0 1 0];
+%O=[C_luen; C_luen*Ad; C_luen*Ad^2; C_luen*Ad^3];
+%ran = rank(O); % Checks
+
+C_bar = [10 2 10 1];
+Q=rho*(C_bar')*C_bar
+[Kd, P_dlqr, e_dlqr]=dlqr(Ad,Bd,Q,1);
+Dd = [
+     0
+     0
+ ]
+
+Cd_acc=[1 0 0 0];
+Cd_nacc=[0 0 1 0];
+
+Td_inv=[Cd_acc;
+     0 1 0 0;
+     0 0 1 0;
+     0 0 0 1];
+Td=inv(Td_inv);
+
+Ad_tilde=Td_inv*Ad*Td;
+Bd_tilde=Td_inv*Bd;
+
+Cd_acc_tilde = Cd_acc*Td;
+Cd_nacc_tilde = Cd_nacc * Td;
+
+Ad_yy=Ad_tilde(1,1);
+Ad_yx=Ad_tilde(1,2:4);
+Ad_xy=Ad_tilde(2:4,1);
+Ad_xx=Ad_tilde(2:4,2:4);
+
+Cd_tilde_y = Cd_nacc_tilde(1,1);
+Cd_tilde_chi = Cd_nacc_tilde(1,2:4);
+
+Bd_tilde_y = Bd_tilde(1,1);
+Bd_tilde_chi = Bd_tilde(2:4,1);
+CCd = [Ad_yx; Cd_tilde_chi];
+Ld = (place(Ad_xx', CCd',3*dis_poles(2:4, 1)))'
+
+
+Ld_acc = Ld(1:3,1);
+Ld_nacc= Ld(1:3,2);
+
+
+Md1 = Ad_xx - Ld_acc*Ad_yx-Ld_nacc*Cd_tilde_chi
+Md2 = Bd_tilde_chi - Ld_acc *Bd_tilde_y
+Md3 = (Ad_xy - Ld_acc*Ad_yy - Ld_nacc*Cd_tilde_y)
+Md4 = Ld_nacc
+Md5 = Ld_acc
+Md6 = Td(1:4,1)
+Md7 = Td(1:4,2:4)
+
+
+% Full
+Ld = (place(Ad', Cd',exp(L_obs_full_poles*fSamplingPeriod))')
+
+
+% obs_poles = dis_poles * 2
+% Ld = (place(Ad', C_luen', obs_poles))'
+% 
+% 
+% Cd_acc=[1 0 0 0];
+% Cd_nacc=[0 0 1 0];
+% 
+% Td_inv=[Cd_acc;
+%      0 1 0 0;
+%      0 0 1 0;
+%      0 0 0 1];
+% Td=inv(Td_inv);
+% 
+% Ad_tilde=Td_inv*Ad*Td;
+% Bd_tilde=Td_inv*Bd;
+% 
+% Cd_acc_tilde = Cd_acc*Td;
+% Cd_nacc_tilde = Cd_nacc * Td;
+% 
+% Ad_yy=Ad_tilde(1,1);
+% Ad_yx=Ad_tilde(1,2:4);
+% Ad_xy=Ad_tilde(2:4,1);
+% Ad_xx=Ad_tilde(2:4,2:4);
+% 
+% Cd_tilde_y = Cd_nacc_tilde(1,1);
+% Cd_tilde_chi = Cd_nacc_tilde(1,2:4);
+% 
+% Bd_tilde_y = Bd_tilde(1,1);
+% Bd_tilde_chi = Bd_tilde(2:4,1);
+% CCd = [Ad_yx; Cd_tilde_chi];
+% Ld_redu = (place(Ad_xx', CCd',3*dis_poles(2:4, 1)))'
+% 
+% 
+% Ld_acc = L_redu(1:3,1);
+% Ld_nacc= L_redu(1:3,2);
+% 
+% 
+% Md1 = Ad_xx - Ld_acc*Ad_yx-Ld_nacc*Cd_tilde_chi
+% Md2 = Bd_tilde_chi - Ld_acc *Bd_tilde_y
+% Md3 = (Ad_xy - Ld_acc*Ad_yy - Ld_nacc*Cd_tilde_y)
+% Md4 = Ld_nacc
+% Md5 = Ld_acc
+% Md6 = Td(1:4,1)
+% Md7 = Td(1:4,2:4)
 
 
 
