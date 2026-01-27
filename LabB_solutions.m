@@ -113,7 +113,7 @@ G_neg_min  = minreal(G_neg);
 
 sysGG = G_neg*G_pos;
 
-rho = 10; % 0.1, 1, 10, 100
+rho = 7; % 0.1, 1, 10, 100
    
 all_roots = rlocus(sysGG, rho);
 neg_roots = all_roots(all_roots<=0);
@@ -190,10 +190,12 @@ dis_poles = eig(A - B*K)
 % M7 = T(1:4,2:4)
 
 % Reduced order state Luenberger observer
+scaling = 3;
+
 C = [1 0 0 0;
      0 0 1 0];
 
-poles = dis_poles .* 4;
+poles = dis_poles .* scaling;
 
 O=[C; C*A; C*A^2; C*A^3];
 ran = rank(O)
@@ -245,11 +247,11 @@ M7 = T(1:4,2:4)
 C_est = [1 0 0 0 ; 
          0 0 1 0];
 
-obs_poles = dis_poles * 4
+obs_poles = dis_poles * scaling
 L = (place(A', C', obs_poles))'
 
 %% 4.9.1 Descrete
-scaling = 4;
+
 freq = 200;
 fSamplingPeriod = 1/freq;
 SamplingPeriod = 0.0219;
@@ -309,7 +311,9 @@ Cd_tilde_chi = Cd_nacc_tilde(1,2:4);
 Bd_tilde_y = Bd_tilde(1,1);
 Bd_tilde_chi = Bd_tilde(2:4,1);
 CCd = [Ad_yx; Cd_tilde_chi];
-Ld = (place(Ad_xx', CCd',3*dis_poles(2:4, 1)))'
+Ld = (place(Ad_xx', CCd',scaling*dis_poles(2:4, 1)))'
+Ld = (place(Ad', Cd',exp(dis_poles*fSamplingPeriod))')
+
 
 
 Ld_acc = Ld(1:3,1);
@@ -326,7 +330,7 @@ Md7 = Td(1:4,2:4)
 
 
 % Full
-Ld = (place(Ad', Cd',exp(L_obs_full_poles*fSamplingPeriod))')
+Ld = (place(Ad', Cd',exp(dis_poles*fSamplingPeriod))')
 
 
 % obs_poles = dis_poles * 2
