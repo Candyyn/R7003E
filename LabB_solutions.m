@@ -29,7 +29,7 @@ p1 = -zeta*wn + 1i*wn*sqrt(1 - zeta^2);
 p2 = -zeta*wn - 1i*wn*sqrt(1 - zeta^2);
 dis_poles = [p1, p2, pc(3, 1), pc(1,1)]
 K = acker(A,B,dis_poles)
-
+display("4.6.1")
 
 
 %% test 4.6.1
@@ -190,7 +190,7 @@ dis_poles = eig(A - B*K)
 % M7 = T(1:4,2:4)
 
 % Reduced order state Luenberger observer
-scaling = 3;
+scaling = 4;
 
 C = [1 0 0 0;
      0 0 1 0];
@@ -330,7 +330,7 @@ Md7 = Td(1:4,2:4)
 
 
 % Full
-Ld = (place(Ad', Cd',exp(dis_poles*fSamplingPeriod))')
+Ld = (place(Ad', Cd',exp(scaling*dis_poles*fSamplingPeriod))')
 
 
 % obs_poles = dis_poles * 2

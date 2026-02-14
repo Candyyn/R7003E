@@ -2,12 +2,17 @@
 clear all;
 clc;
 close all;
-fSamplingPeriod = 0.005
+fSamplingPeriod = 0.01
+
+
+if exist('tSerialCommunication', 'var') && isvalid(tSerialCommunication)
+    clear tSerialCommunication
+end
 
 % basic parameters
 % fSamplingPeriod	= should be already loaded in the workspace
-iCommunicationTime	= 30;		% [sec]
-iCOMPort			= '/dev/cu.usbmodem1401';
+iCommunicationTime	= 40;		% [sec]
+iCOMPort			= '/dev/ttyACM0';
 %iCOMPort			= '3';
 fPlotsUpdatesPeriod	= 1;		% [sec]
 %
