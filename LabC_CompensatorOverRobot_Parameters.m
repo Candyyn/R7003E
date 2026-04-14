@@ -1,3 +1,9 @@
+ iNumberOfEncoderSteps	= 720;
+fGyroConversionFactor	= 250 / 32768 % -1/131;
+%fGyroConversionFactor	= -1/131;
+fWheelRadius			= 0.0216; % [m]
+load('GyroBias.mat');
+
 LabC_solutions;
 
 %%

@@ -1,7 +1,9 @@
-Load_LabB_Solutions
+LabC_solutions;
 
-Nxd =
-Nud =
+%%
+Nxd = 0
+Nud= inv(C_acc*inv(eye(4)-Ad+Bd*Kd)*Bd)
+
 
 
 

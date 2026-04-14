@@ -11,7 +11,7 @@ end
 
 % basic parameters
 % fSamplingPeriod	= should be already loaded in the workspace
-iCommunicationTime	= 40;		% [sec]
+iCommunicationTime	= 30;		% [sec]
 iCOMPort			= '/dev/ttyACM0';
 %iCOMPort			= '3';
 fPlotsUpdatesPeriod	= 1;		% [sec]
@@ -154,7 +154,137 @@ for iPacketIndex = 1:iNumberOfPackets;
 	%
 end;% cycle on the packets
  
- 
+
+%% ===============================
+% SELECT WHICH EXPERIMENT THIS RUN IS
+% ===============================
+
+EXPERIMENT = 2;     % <-- CHANGE: 1 or 2
+MYGROUP = 7;        % <-- your group number
+
+% Only relevant for experiment 2
+r_max = 0.130;       % <-- set your found value
+
+
+%% ===============================
+% Convert signals to column vectors
+% ===============================
+
+times_col      = afTimes';
+encoder_col    = aafProcessedInformation(MEASURED_X_W_INDEX, :)';
+angle_col      = aafProcessedInformation(MEASURED_THETA_B_INDEX, :)';
+actuation_col  = aafProcessedInformation(U_INDEX, :)';
+
+
+%% ===============================
+% Load previous file if it exists
+% ===============================
+
+filename = sprintf('group_%d_results.mat', MYGROUP);
+
+if isfile(filename)
+
+    load(filename)
+
+    fprintf("Loaded existing results file\n")
+
+else
+
+    fprintf("Creating new results file\n")
+
+end
+
+
+%% ===============================
+% Store data depending on experiment
+% ===============================
+
+if EXPERIMENT == 1
+
+    fprintf("Saving Experiment 1 data\n")
+
+    eval(sprintf('group_%d_experiment_1_times = times_col;', MYGROUP));
+    eval(sprintf('group_%d_experiment_1_encoder = encoder_col;', MYGROUP));
+    eval(sprintf('group_%d_experiment_1_angle = angle_col;', MYGROUP));
+    eval(sprintf('group_%d_experiment_1_actuation = actuation_col;', MYGROUP));
+
+elseif EXPERIMENT == 2
+
+    fprintf("Saving Experiment 2 data\n")
+
+    eval(sprintf('group_%d_experiment_2_times = times_col;', MYGROUP));
+    eval(sprintf('group_%d_experiment_2_encoder = encoder_col;', MYGROUP));
+    eval(sprintf('group_%d_experiment_2_angle = angle_col;', MYGROUP));
+    eval(sprintf('group_%d_experiment_2_actuation = actuation_col;', MYGROUP));
+    eval(sprintf('group_%d_r_max = r_max;', MYGROUP));
+
+else
+
+    error("EXPERIMENT must be 1 or 2")
+
+end
+
+
+
+%% ===============================
+% Ensure all required variables exist
+% ===============================
+
+varNames = {
+    sprintf('group_%d_experiment_1_times', MYGROUP)
+    sprintf('group_%d_experiment_1_encoder', MYGROUP)
+    sprintf('group_%d_experiment_1_angle', MYGROUP)
+    sprintf('group_%d_experiment_1_actuation', MYGROUP)
+    sprintf('group_%d_experiment_2_times', MYGROUP)
+    sprintf('group_%d_experiment_2_encoder', MYGROUP)
+    sprintf('group_%d_experiment_2_angle', MYGROUP)
+    sprintf('group_%d_experiment_2_actuation', MYGROUP)
+    sprintf('group_%d_r_max', MYGROUP)
+};
+
+for i = 1:length(varNames)
+
+    if ~exist(varNames{i}, 'var')
+
+        if contains(varNames{i}, 'r_max')
+            eval([varNames{i} ' = [];']);
+        else
+            eval([varNames{i} ' = [];']);
+        end
+
+    end
+
+end
+
+
+%% ===============================
+% Save ALL required variables
+% ===============================
+
+
+save(filename, ...
+    sprintf('group_%d_experiment_1_times', MYGROUP), ...
+    sprintf('group_%d_experiment_1_encoder', MYGROUP), ...
+    sprintf('group_%d_experiment_1_angle', MYGROUP), ...
+    sprintf('group_%d_experiment_1_actuation', MYGROUP), ...
+    sprintf('group_%d_experiment_2_times', MYGROUP), ...
+    sprintf('group_%d_experiment_2_encoder', MYGROUP), ...
+    sprintf('group_%d_experiment_2_angle', MYGROUP), ...
+    sprintf('group_%d_experiment_2_actuation', MYGROUP), ...
+    sprintf('group_%d_r_max', MYGROUP) ...
+);
+
+fprintf("Saved file:\n")
+disp(filename)
+
+
+
+
+
+
+
+
+
 % close the serial communications
 fprintf('Closing the serial communications...');
 fclose(tSerialCommunication);
