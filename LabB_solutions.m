@@ -113,7 +113,7 @@ G_neg_min  = minreal(G_neg);
 
 sysGG = G_neg*G_pos;
 
-rho = 7; % 0.1, 1, 10, 100
+rho = 10; % 0.1, 1, 10, 100
    
 all_roots = rlocus(sysGG, rho);
 neg_roots = all_roots(all_roots<=0);
